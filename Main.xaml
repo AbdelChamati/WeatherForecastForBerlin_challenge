@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:Annotation.AnnotationText="UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9" sap:VirtualizedContainerService.HintSize="896,2165" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:Annotation.AnnotationText="UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9" sap:VirtualizedContainerService.HintSize="838,2165" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -114,7 +114,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage sap2010:Annotation.AnnotationText="Weather forecast for Berlin (14 days)&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Description:&#xD;&#xA;The process will navigate to Weather Forecst for Berlin City, and extract the Max/Min Temperature in °C, chance of precipitation and wind speed, Then forward them by Email to the Marketing Manager." DisplayName="Log Message | Start process" sap:VirtualizedContainerService.HintSize="438,313" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;### Start WeatherForecastForBerlin_Challenge ###&quot;]">
+    <ui:LogMessage sap2010:Annotation.AnnotationText="Weather forecast for Berlin (14 days)&#xA;&#xA;&#xA;Description:&#xA;The process will navigate to Weather Forecst for Berlin City, and extract the Max/Min Temperature in °C, chance of precipitation and wind speed, Then forward them by Email to the Marketing Manager." DisplayName="Log Message | Start process" sap:VirtualizedContainerService.HintSize="438,313" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;### Start WeatherForecastForBerlin_Challenge ###&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -123,15 +123,9 @@
     </ui:LogMessage>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="InitAllSettings.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="438,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="InitAllSettings.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">
-          <Literal x:TypeArguments="x:String">Data\Config.xlsx</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="s:String[]" x:Key="in_ConfigSheets">
-          <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;Settings&quot;,&quot;Constants&quot;}" />
-        </InArgument>
-        <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">
-          <VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
-        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">Data\Config.xlsx</InArgument>
+        <InArgument x:TypeArguments="s:String[]" x:Key="in_ConfigSheets">[{"Settings","Constants"}]</InArgument>
+        <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">[Config]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:GetRobotCredential TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Retrieving the access credentials from The Orchestrator Asset" AssetName="[Config(&quot;GmailCredential&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential | Mail Credentials" FolderPath="[Config(&quot;OrchestratorFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="438,225" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secStr_Password]" Username="[str_UserName]">
@@ -143,16 +137,12 @@
     </ui:GetRobotCredential>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WeatherApp\NavigateToTheWeatherApp.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="438,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="WeatherApp\NavigateToTheWeatherApp.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_str_WeatherAppLink">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;WeatherLink&quot;).ToString" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_WeatherAppLink">[Config("WeatherLink").ToString]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WeatherApp\ExtractWeatherDataTable.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="438,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="WeatherApp\ExtractWeatherDataTable.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_WeatherDataTable">
-          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_WeatherDataTable" />
-        </OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_WeatherDataTable">[dt_WeatherDataTable]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <Assign sap2010:Annotation.AnnotationText="Initialize HTML Table: create an HTML table structure as a string variable. This table will be used to format the weather data." DisplayName="Assign | str_htmlTable" sap:VirtualizedContainerService.HintSize="438,164" sap2010:WorkflowViewState.IdRef="Assign_1">
@@ -168,16 +158,12 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,381" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Getting Weather Infos" sap:VirtualizedContainerService.HintSize="438,381" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WeatherApp\GettingWeatherInfos.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="WeatherApp\GettingWeatherInfos.xaml">
           <ui:InvokeWorkflowFile.Arguments>
-            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_WeatherDataTable">
-              <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_WeatherDataTable" />
-            </InArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="InOut_str_htmlTable">
-              <VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_htmlTable" />
-            </InOutArgument>
+            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_WeatherDataTable">[dt_WeatherDataTable]</InArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="InOut_str_htmlTable">[str_htmlTable]</InOutArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </TryCatch.Try>
@@ -200,49 +186,23 @@
     </TryCatch>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendEmail\StructureEmailBodyHTML.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="438,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="SendEmail\StructureEmailBodyHTML.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_str_htmlTable">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_htmlTable" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_str_Introduction">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;Introduction&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_str_ReceiverLastName">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;ReceiverLastName&quot;).ToString" />
-        </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_str_emailBody">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_emailBody" />
-        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_htmlTable">[str_htmlTable]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_Introduction">[Config("Introduction").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_ReceiverLastName">[Config("ReceiverLastName").ToString]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_str_emailBody">[str_emailBody]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendEmail\SendingEmail.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="438,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="SendEmail\SendingEmail.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_str_EmailReceiver">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;EmailReceiver&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_str_EmailSubject">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;EmailSubject&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_str_emailBody">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_emailBody" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_str_UserName">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_UserName" />
-        </InArgument>
-        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_secStr_Password">
-          <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="secStr_Password" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="in_int_GmailPort">
-          <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="CInt(Config(&quot;GmailPort&quot;).ToString)" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_str_GmailServer">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;GmailServer&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_str_EmailSender">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;EmailSender&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_str_SenderName">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;SenderName&quot;).ToString" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_EmailReceiver">[Config("EmailReceiver").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_EmailSubject">[Config("EmailSubject").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_emailBody">[str_emailBody]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_UserName">[str_UserName]</InArgument>
+        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_secStr_Password">[secStr_Password]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_int_GmailPort">[CInt(Config("GmailPort").ToString)]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_GmailServer">[Config("GmailServer").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_EmailSender">[Config("EmailSender").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_SenderName">[Config("SenderName").ToString]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:LogMessage DisplayName="Log Message | End process" sap:VirtualizedContainerService.HintSize="438,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;### End WeatherForecastForBerlin_Challenge ###&quot;]" />
